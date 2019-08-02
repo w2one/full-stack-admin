@@ -1,0 +1,60 @@
+{
+  "code": 0,
+  "msg": "ok",
+  "data": [
+    {
+      "name": "Home",
+      "code": "d0c56ca7816f4083a3aa",
+      "link": "home"
+    },
+    {
+      "name": "Show",
+      "code": "d0c56ca7816f4083a3a01",
+      "link": "show"
+    },
+    {
+      "name": "Banner",
+      "code": "d0c56ca7816f4083a3a21",
+      "link": "banner"
+    },
+    {
+      "name": "Report",
+      "code": "d0c56ca7816f4083a3a1",
+      "link": "report"
+    },
+    {
+      "name": "wechat",
+      "code": "42c4a4d2042545e04e27",
+      "link": "wechat",
+      "children": [
+        {
+          "name": "Menu",
+          "code": "48f04026bb7815699be9",
+          "link": "menu"
+        },
+        {
+          "name": "User",
+          "code": "48f04026bb4815699be9",
+          "link": "user"
+        }
+      ]
+    },
+    {
+      "name": "System",
+      "code": "42c4a4d2042545e0ae27",
+      "link": "system",
+      "children": [
+        {
+          "name": "Dict",
+          "code": "48f04026bb7845699be9",
+          "link": "dict"
+        },
+        {
+          "name": "User",
+          "code": "d326df189dc94cacb15b",
+          "link": "user"
+        }
+      ]
+    }
+  ]
+}

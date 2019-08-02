@@ -1,0 +1,17 @@
+{
+  "code": 0,
+  "msg": "ok",
+  "data": {
+    "size": 20,
+    "pages": 1,
+    "total": 1,
+    "records": [
+      {
+        "dictNameCn": "姓名",
+        "dictNameEn": "name",
+        "dictCode": "123123",
+        "description": "这是姓名啊"
+      }
+    ]
+  }
+}
