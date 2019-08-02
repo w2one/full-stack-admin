@@ -1,6 +1,4 @@
-# [React mobile boilerplate](https://github.com/ScorpionJay/react-mobile-boilerplate) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ScorpionJay/react-mobile-boilerplate/blob/master/LICENSE) [![CircleCI](https://circleci.com/gh/ScorpionJay/react-mobile-boilerplate.svg?style=svg)](https://circleci.com/gh/ScorpionJay/react-mobile-boilerplate)
-
-React mobile boilerplate
+# full stack admin
 
 ## How to run
 
@@ -26,7 +24,7 @@ yarn start
 yarn build
 ```
 
-open browser http://localhost:9000
+open browser http://ip:9000
 
 ## Structure
 
