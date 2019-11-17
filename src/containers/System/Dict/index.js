@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 /* eslint-disable react/jsx-handler-names */
 /* eslint-disable react/sort-comp */
 /**

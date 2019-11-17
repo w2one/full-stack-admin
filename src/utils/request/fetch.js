@@ -43,14 +43,6 @@ export default async function({
       Object.assign(requestConfig.headers, headers);
     }
 
-    // header 里公共参数
-    requestConfig.headers = {
-      ...requestConfig.headers,
-      version: 1, // 服务版本号
-      source: "E-Agent", //来源
-      requestNo: new Date().getTime() // 请求序号
-    };
-
     // method & data
     if (method.toLowerCase() === "post" || method.toLowerCase() === "put") {
       // form or json

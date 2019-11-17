@@ -76,7 +76,7 @@ class Upload extends React.Component {
         // fileList: [...state.fileList, result.data]
         fileList: [
           ...state.fileList,
-          { url: "http://jay.aliyuntao.top/" + result.key, uid: result.hash }
+          { url: "http://jay.shanghaim.net/" + result.key, uid: result.hash }
         ]
       }),
       () => this.props.onChange(this.state.fileList)

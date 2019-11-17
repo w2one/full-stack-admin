@@ -17,6 +17,7 @@ if (BUILD_ENV === "sit") {
   BASE_API = "https://m.shanghaim.net/fullstack/";
 } else {
   BASE_API = "http://localhost:4000/";
+  BASE_API = "https://m.shanghaim.net/fullstack/";
 }
 
 export { BASE_API };

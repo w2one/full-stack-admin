@@ -1,4 +1,4 @@
-import Request from "./request";
+import fetch from "./fetch";
+// import axios from "./axios";
 
-// export { default as Request } from "./request";
-export default Request;
+export default fetch;

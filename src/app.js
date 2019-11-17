@@ -69,16 +69,13 @@ const mapStateToProps = state => ({
   token: state.loginReducer.token
 });
 
-const AppContainer = connect(
-  mapStateToProps,
-  null
-)(App);
+const AppContainer = connect(mapStateToProps, null)(App);
 
 import ErrorBoundary from "@/components/ErrorBoundary";
 // import { UserContext } from "./context/UserContext";
 import { DictContext } from "Context/DictContext";
 
-import { LocaleProvider } from "antd";
+import { ConfigProvider } from "antd";
 import zh_CN from "antd/lib/locale-provider/zh_CN";
 
 class Index extends React.Component {
@@ -97,13 +94,13 @@ class Index extends React.Component {
     return (
       <ErrorBoundary>
         <Provider store={store}>
-          <LocaleProvider locale={zh_CN}>
+          <ConfigProvider locale={zh_CN}>
             <DictContext.Provider value={{ ...this.state.dict }}>
               {/* <UserContext.Provider value={{ name: "jay" }}> */}
               <AppContainer />
               {/* </UserContext.Provider> */}
             </DictContext.Provider>
-          </LocaleProvider>
+          </ConfigProvider>
         </Provider>
       </ErrorBoundary>
     );
