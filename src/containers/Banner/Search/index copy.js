@@ -53,9 +53,10 @@ class Search extends React.PureComponent {
                   labelCol={{ sm: { span: 6 } }}
                   wrapperCol={{ sm: { span: 12 } }}
                 >
-                  {getFieldDecorator("name", {})(
-                    <Input placeholder="请输入名字" />
-                  )}
+                  {getFieldDecorator(
+                    "name",
+                    {}
+                  )(<Input placeholder="请输入名字" />)}
                 </Item>
               </Col>
               <Col span={6}>
@@ -64,9 +65,10 @@ class Search extends React.PureComponent {
                   labelCol={{ sm: { span: 6 } }}
                   wrapperCol={{ sm: { span: 12 } }}
                 >
-                  {getFieldDecorator("name", {})(
-                    <Input placeholder="请输入名字" />
-                  )}
+                  {getFieldDecorator(
+                    "name",
+                    {}
+                  )(<Input placeholder="请输入名字" />)}
                 </Item>
               </Col>
               <Col span={6}>
@@ -75,9 +77,10 @@ class Search extends React.PureComponent {
                   labelCol={{ sm: { span: 6 } }}
                   wrapperCol={{ sm: { span: 12 } }}
                 >
-                  {getFieldDecorator("name", {})(
-                    <Input placeholder="请输入名字" />
-                  )}
+                  {getFieldDecorator(
+                    "name",
+                    {}
+                  )(<Input placeholder="请输入名字" />)}
                 </Item>
               </Col>
               <Col span={6}>
@@ -86,9 +89,10 @@ class Search extends React.PureComponent {
                   labelCol={{ sm: { span: 6 } }}
                   wrapperCol={{ sm: { span: 12 } }}
                 >
-                  {getFieldDecorator("name", {})(
-                    <Input placeholder="请输入名字" />
-                  )}
+                  {getFieldDecorator(
+                    "name",
+                    {}
+                  )(<Input placeholder="请输入名字" />)}
                 </Item>
               </Col>
             </Row>

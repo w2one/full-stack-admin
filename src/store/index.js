@@ -21,9 +21,10 @@ function store(initialState) {
     createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
   } else {
     const { createLogger } = require("redux-logger");
-    createStoreWithMiddleware = applyMiddleware(thunk, createLogger())(
-      createStore
-    );
+    createStoreWithMiddleware = applyMiddleware(
+      thunk,
+      createLogger()
+    )(createStore);
   }
   const store = createStoreWithMiddleware(reducers, initialState);
   if (module.hot) {

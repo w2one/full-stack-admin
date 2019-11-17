@@ -121,7 +121,4 @@ const mapDispatchToProps = dispatch => ({
   logoutAction: bindActionCreators(logoutAction, dispatch)
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
