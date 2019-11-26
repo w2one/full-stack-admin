@@ -1,0 +1,12 @@
+{
+  "code": 0,
+  "msg": "ok",
+  "data": {
+    "sex": {
+      "dictNameCn": "姓名",
+      "dictNameEn": "name",
+      "dictCode": "123123",
+      "description": "这是姓名啊"
+    }
+  }
+}

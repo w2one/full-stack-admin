@@ -45,7 +45,8 @@ module.exports = {
             // comments: false
             comments: /Build in/i
           }
-        }
+        },
+        extractComments: false
       })
     ]
   }

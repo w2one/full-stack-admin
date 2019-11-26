@@ -61,6 +61,7 @@ module.exports = {
       "@": path.resolve(__dirname, "../src/"),
       "@config": path.resolve(__dirname, "../config/"),
       "@utils": path.resolve(__dirname, "../src/utils/"),
+      "@context": path.resolve(__dirname, "../src/context/"),
       Styles: path.resolve(__dirname, "../src/style/"),
       Utils: path.resolve(__dirname, "../src/utils/"),
       Components: path.resolve(__dirname, "../src/components/"),

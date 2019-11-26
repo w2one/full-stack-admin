@@ -1,30 +1,26 @@
 /**
- * 字典context
+ * dict context
  */
 import React, { createContext } from "react";
 
 export const DictContext = createContext({ value: {} });
 
 export function withDict(Component) {
-  const displayName = Component.name;
   const C = props => {
-    const { wrappedComponentRef, ...remainingProps } = props;
-
+    const { forwardedRef, ...remainingProps } = props;
     return (
       <DictContext.Consumer>
         {context => (
-          <Component
-            {...remainingProps}
-            {...context}
-            ref={wrappedComponentRef}
-          />
+          <Component {...remainingProps} {...context} ref={forwardedRef} />
         )}
       </DictContext.Consumer>
     );
   };
 
-  C.displayName = displayName;
+  C.displayName = Component.name;
   C.WrappedComponent = Component;
 
-  return C;
+  return React.forwardRef((props, ref) => {
+    return <C {...props} forwardedRef={ref} />;
+  });
 }

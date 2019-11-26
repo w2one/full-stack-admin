@@ -1,5 +1,5 @@
 /**
- * 主页
+ * Main
  */
 import React, { Suspense, lazy } from "react";
 import { Layout, Modal } from "antd";
@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { menuAction } from "./action";
 import { logoutAction } from "../Login/action";
-import { Session as Storage } from "Utils/storage";
+import { Session as Storage } from "@utils/storage";
 
 import Request from "Utils/request";
 
@@ -94,11 +94,11 @@ class Main extends React.Component {
           <Bread data={menu} />
 
           <Content
+            className="layContent"
             style={{
               margin: "0 12px",
               padding: 24,
-              background: "#fff",
-              minHeight: "80vh"
+              background: "#fff"
             }}
           >
             <Suspense fallback={<Loading />}>

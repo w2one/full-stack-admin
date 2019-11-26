@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * @author Jay
  * @date 2019-4-1
@@ -165,6 +166,7 @@ module.exports = merge(common, {
     splitChunks: {
       chunks: "all", //all, async, and initial
       minChunks: 3,
+      name: false,
       cacheGroups: {
         vendor: {
           test: /node_modules/,

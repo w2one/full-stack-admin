@@ -27,7 +27,7 @@ function Login(props) {
         await props.loginAction(values, () => setRedirectToReferrer(true));
 
         // load menu
-        await props.menuAction();
+        // await props.menuAction();
       }
     });
   }

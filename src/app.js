@@ -84,10 +84,12 @@ class Index extends React.Component {
   };
 
   async componentDidMount() {
-    // let response = await Request({
-    //   url: API.common.dict
-    // });
-    // response.state && this.setState({ dict: response.data });
+    let response = await Request({
+      // url: API.common.dict
+      url: "json/dictjson.json",
+      method: "get"
+    });
+    response.state && this.setState({ dict: response.data });
   }
 
   render() {
