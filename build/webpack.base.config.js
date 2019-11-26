@@ -59,6 +59,8 @@ module.exports = {
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "../src/"),
+      "@config": path.resolve(__dirname, "../config/"),
+      "@utils": path.resolve(__dirname, "../src/utils/"),
       Styles: path.resolve(__dirname, "../src/style/"),
       Utils: path.resolve(__dirname, "../src/utils/"),
       Components: path.resolve(__dirname, "../src/components/"),
@@ -95,6 +97,7 @@ module.exports = {
       filepath: path.resolve(__dirname, "../dll/*.dll.js"),
       outputPath: "dll",
       publicPath: "dll",
+      hash: true,
       includeSourcemap: false
     }),
     new webpack.DefinePlugin({

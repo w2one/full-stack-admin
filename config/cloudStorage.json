@@ -1,0 +1,8 @@
+{
+  "prefix": "admin/v1",
+  "qiniu": {
+    "accessKey": "",
+    "secretKey": "",
+    "scope": ""
+  }
+}

@@ -3,7 +3,7 @@
  * request
  */
 
-import { BASE_API } from "../config";
+import { BASE_API } from "@config";
 import { Toast } from "Components";
 import { Session as Storage } from "Utils/storage";
 
@@ -13,7 +13,7 @@ import { Session as Storage } from "Utils/storage";
  */
 export default async function({
   url,
-  method = "get",
+  method = "post",
   data = {},
   headers = { "Content-Type": "application/json" },
   loading = false,

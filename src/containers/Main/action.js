@@ -1,6 +1,6 @@
-import Request from "Utils/request";
-import API from "Utils/api";
-import { Session as Storage } from "Utils/storage";
+import Request from "@utils/request";
+import API from "@utils/api";
+import { Session as Storage } from "@utils/storage";
 export const MENUS = "MENUS";
 
 /**
@@ -8,7 +8,8 @@ export const MENUS = "MENUS";
  */
 export const menuAction = () => async dispatch => {
   let response = await Request({
-    url: API.menu
+    url: API.common.menu,
+    method: "get"
   });
 
   if (response.state) {

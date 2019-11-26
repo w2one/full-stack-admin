@@ -6,6 +6,10 @@ import { withRouter, Link } from "react-router-dom";
 import { Breadcrumb } from "antd";
 
 class MenuBreadcrumb extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    return JSON.stringify(nextProps) !== JSON.stringify(this.props);
+  }
+
   render() {
     const { location, data } = this.props;
 

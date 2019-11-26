@@ -2,7 +2,7 @@
  * https://echarts.baidu.com/tutorial.html#%E5%9C%A8%20webpack%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20ECharts
  */
 
-import React, { Component } from "react";
+import React from "react";
 
 // 引入 ECharts 主模块
 var echarts = require("echarts/lib/echarts");
@@ -15,7 +15,7 @@ require("echarts/lib/component/title");
 import Request from "Utils/request";
 import API from "Utils/api";
 
-export class Report extends Component {
+export class Report extends React.PureComponent {
   constructor(props) {
     super(props);
   }
@@ -30,7 +30,7 @@ export class Report extends Component {
     const xData = data.data.map(item => item._id);
     const yData = data.data.map(item => item.total);
 
-    console.log(xData);
+    // console.log(xData);
 
     var myChart = echarts.init(document.getElementById("main"));
     // 绘制图表
@@ -96,6 +96,7 @@ export class Report extends Component {
   }
 
   render() {
+    console.log("echarts render", this.props);
     return (
       <div>
         <div id="main" style={{ height: 300 }} />

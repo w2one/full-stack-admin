@@ -27,4 +27,4 @@ function Head(props) {
   );
 }
 
-export default Head;
+export default React.memo(Head);

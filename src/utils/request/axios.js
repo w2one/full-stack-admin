@@ -5,7 +5,7 @@
 const axios = require("axios");
 import { Session as Storage } from "Utils/storage";
 import { Toast } from "Components";
-import { BASE_API } from "../config";
+import { BASE_API } from "@config";
 
 const instance = axios.create({
   //   baseURL: "https://some-domain.com/api/",
@@ -17,7 +17,7 @@ const instance = axios.create({
 
 const request = async ({
   url,
-  method = "get",
+  method = "post",
   data = {}
   // headers = { "Content-Type": "application/json" },
   // loading = false,

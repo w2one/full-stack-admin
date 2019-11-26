@@ -203,6 +203,7 @@ class DictContainer extends Component {
 
     let response = await Request({
       url: API.system.dict.query,
+      method: "get",
       data
     });
     this.setState({ loading: false });

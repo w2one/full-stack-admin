@@ -74,7 +74,7 @@ function Banner() {
     setVo(null);
     fetchData();
   }
-
+  console.log("banner render");
   return (
     <div>
       {/* 搜索 */}
@@ -110,4 +110,10 @@ function Banner() {
   );
 }
 
-export default Banner;
+// export default React.memo(
+//   Banner,
+//   (prevProps, nextProps) =>
+//     JSON.stringify(prevProps) === JSON.stringify(nextProps)
+// );
+
+export default React.memo(Banner);

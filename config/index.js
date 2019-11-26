@@ -4,7 +4,6 @@
 
 const config = {};
 
-// 微服务拆分
 let BASE_API = "";
 
 if (BUILD_ENV === "sit") {

@@ -2,41 +2,35 @@
  * login action
  */
 
-import Request from "Utils/request";
-import API from "Utils/api";
-import { Session as Storage } from "Utils/storage";
+import { Request, API, Storage } from "@utils";
+const Session = Storage.Session;
 export const LOGIN = "Login";
 export const LOGOUT = "Logout";
 
+/**
+ * login action
+ * @param {*} data
+ * @param {*} callback
+ */
 export const loginAction = (data, callback) => async dispatch => {
-  console.log(data);
-  // dispatch({
-  //   type: LOGIN,
-  //   data: { token: 123, userInfo: { userName: "jay" } }
-  // });
-  // Storage.set("token", 123);
-  // Storage.set("userInfo", "jay");
-  // Application.set("username", data.userName);
-  // callback && callback();
   let response = await Request({
     url: API.common.login,
-    method: "post",
     data,
     headers: { token: data.result }
   });
   if (response.state) {
-    // alert(JSON.response(response));
     dispatch({
       type: LOGIN,
       data: { token: response.data, userInfo: data }
     });
-    Storage.set("token", response.data);
-    // Storage.set("userInfo", data);
-    // Application.set("username", data.userName);
+    Session.set("token", response.data);
     callback && callback();
   }
 };
 
+/**
+ * logout action
+ */
 export const logoutAction = () => async dispatch => {
   dispatch({
     type: LOGOUT,
@@ -44,5 +38,5 @@ export const logoutAction = () => async dispatch => {
       token: null
     }
   });
-  Storage.clear();
+  Session.clear();
 };

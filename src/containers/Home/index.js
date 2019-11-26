@@ -1,27 +1,25 @@
 /**
  * Home container
  */
-import React, { Component } from "react";
-// import Request from "Utils/request";
-// import API from "Utils/api";
-// import Statistics from "./component/Statistics";
-// import Message from "./component/Message";
+import React from "react";
 
-class Home extends Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
-  async componentDidMount() {}
+  // eslint-disable-next-line react/sort-comp
+  // shouldComponentUpdate() {
+  //   // console.log(nextProps);
+  //   return false;
+  // }
 
   render() {
-    // const {} = this.state;
+    console.log("render main", this.props);
 
     return (
       <div className="home" data-spm="spm-a-home">
-        {/* <Statistics />
-        <Message /> */}
         Home
       </div>
     );

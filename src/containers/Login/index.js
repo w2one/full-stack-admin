@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { loginAction } from "./action";
 import { menuAction } from "../Main/action";
-import { Application } from "Utils/storage";
+import { Application } from "@utils/storage";
 import { Form, Icon, Input, Button } from "antd";
 import "./style";
 

@@ -2,15 +2,11 @@
  * login reducer
  */
 import { LOGIN, LOGOUT } from "./action";
-// import { Session as Storage } from "Utils/storage";
 
 const initialState = {
   token: null,
-  // userInfo: Storage.get("userInfo") || {}
   userInfo: {}
 };
-
-// console.log(initialState);
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {

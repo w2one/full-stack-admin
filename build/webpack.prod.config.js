@@ -13,7 +13,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
 // .BundleAnalyzerPlugin;
-const ZipPlugin = require("zip-webpack-plugin");
+const CloudStorageWebpackPlugin = require("cloud-storage-webpack-plugin");
+// const ZipPlugin = require("zip-webpack-plugin");
 const common = require("./webpack.base.config.js");
 const theme = require("../theme.json");
 
@@ -133,12 +134,14 @@ module.exports = merge(common, {
     // new BundleAnalyzerPlugin({
     //   analyzerPort: 8889
     // }),
-    new webpack.BannerPlugin("Build in " + new Date()),
-    new ZipPlugin({
-      // path: "../",
-      // pathPrefix: "www",
-      filename: "dist.zip"
-    })
+    // cloud storage
+    // new CloudStorageWebpackPlugin(require("../config/cloudStorage.json")),
+    new webpack.BannerPlugin("Build in " + new Date())
+    // new ZipPlugin({
+    //   // path: "../",
+    //   // pathPrefix: "www",
+    //   filename: "dist.zip"
+    // })
   ],
   optimization: {
     runtimeChunk: {
@@ -155,7 +158,8 @@ module.exports = merge(common, {
             // comments: false
             comments: /Build in/i
           }
-        }
+        },
+        extractComments: false
       })
     ],
     splitChunks: {

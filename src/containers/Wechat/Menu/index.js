@@ -193,7 +193,8 @@ class DictContainer extends Component {
    */
   query = async () => {
     let response = await Request({
-      url: API.wechat.menu.query
+      url: API.wechat.menu.query,
+      method: "get"
     });
     console.log(response);
     this.setState({ loading: false });

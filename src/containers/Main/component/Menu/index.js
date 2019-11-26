@@ -23,7 +23,7 @@ const IconMap = {
   wechat
 };
 
-class SiderMenu extends React.Component {
+class SiderMenu extends React.PureComponent {
   state = {
     openKeys: [],
     selectedKeys: []

@@ -5,6 +5,7 @@ import React, { Suspense, lazy } from "react";
 import { Layout, Modal } from "antd";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Loading from "Components/Loading";
+import { ConnectRoute } from "Components";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { menuAction } from "./action";
@@ -18,11 +19,22 @@ import Head from "./component/Head";
 import Menu from "./component/Menu";
 import Bread from "./component/Bread";
 
-const Home = lazy(() => import(/* webpackChunkName: "Home" */ "../Home"));
+const Home = ConnectRoute(
+  lazy(() => import(/* webpackChunkName: "Home" */ "../Home"))
+);
 const System = lazy(() => import(/* webpackChunkName: "system" */ "../System"));
-const Report = lazy(() => import(/* webpackChunkName: "Report" */ "../Report"));
-const Banner = lazy(() => import(/* webpackChunkName: "Banner" */ "../Banner"));
-const Show = lazy(() => import(/* webpackChunkName: "Banner" */ "../Show"));
+const Report = ConnectRoute(
+  lazy(() => import(/* webpackChunkName: "Report" */ "../Report"))
+);
+const Banner = ConnectRoute(
+  lazy(() => import(/* webpackChunkName: "Banner" */ "../Banner"))
+);
+const Show = ConnectRoute(
+  lazy(() => import(/* webpackChunkName: "show" */ "../Show"))
+);
+const GeoMap = ConnectRoute(
+  lazy(() => import(/* webpackChunkName: "GeoMap" */ "../GeoMap"))
+);
 const Wechat = lazy(() => import(/* webpackChunkName: "Wechat" */ "../Wechat"));
 
 import "./style";
@@ -34,7 +46,8 @@ class Main extends React.Component {
 
   async componentDidMount() {
     let response = await Request({
-      url: "json/menu.json"
+      url: "json/menu.json",
+      method: "get"
     });
 
     if (response.state) {
@@ -53,15 +66,10 @@ class Main extends React.Component {
       title: "提示信息",
       content: "确认退出吗?",
       onOk: () => {
-        // return new Promise(resolve => {
-        // setTimeout(() => {
         Storage.clear();
         // location.href = "/";
         this.props.logoutAction();
         this.props.history.replace("/login");
-        // resolve();
-        // }, 200);
-        // });
       }
     });
   };
@@ -101,6 +109,7 @@ class Main extends React.Component {
                 <Route path={`/banner`} component={Banner} />
                 <Route path={`/wechat`} component={Wechat} />
                 <Route path={`/show`} component={Show} />
+                <Route path={`/geomap`} component={GeoMap} />
                 <Redirect to={`/home`} />
               </Switch>
             </Suspense>

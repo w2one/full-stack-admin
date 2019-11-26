@@ -73,6 +73,7 @@ function Show() {
     setVo(vo);
   }
 
+  console.log("show render");
   return (
     <div>
       <Search />
