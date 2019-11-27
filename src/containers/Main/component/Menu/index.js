@@ -7,21 +7,21 @@ import { Link, withRouter } from "react-router-dom";
 import { Menu, Icon } from "antd";
 const { SubMenu } = Menu;
 
-import Report from "@/static/images/report.svg";
-import System from "@/static/images/system.svg";
-import Home from "@/static/images/home.svg";
-import Banner from "@/static/images/Banner.svg";
-import show from "@/static/images/show.svg";
-import wechat from "@/static/images/wechat.svg";
+// import Report from "@/static/images/report.svg";
+// import System from "@/static/images/system.svg";
+// import Home from "@/static/images/home.svg";
+// import Banner from "@/static/images/Banner.svg";
+// import show from "@/static/images/show.svg";
+// import wechat from "@/static/images/wechat.svg";
 
-const IconMap = {
-  home: Home,
-  report: Report,
-  system: System,
-  banner: Banner,
-  show,
-  wechat
-};
+// const IconMap = {
+//   home: Home,
+//   report: Report,
+//   system: System,
+//   banner: Banner,
+//   show,
+//   wechat
+// };
 
 class SiderMenu extends React.PureComponent {
   state = {
@@ -99,56 +99,67 @@ class SiderMenu extends React.PureComponent {
     const { openKeys, selectedKeys } = this.state;
     // console.log("xxxx", openKeys, selectedKeys);
     return (
-      <Menu
-        mode="inline"
-        openKeys={openKeys}
-        selectedKeys={selectedKeys}
-        onOpenChange={this.fnOpenChange}
-        subMenuOpenDelay={0}
-        subMenuCloseDelay={0.1}
-        style={{ height: "100%", borderRight: 0 }}
+      <div
+        style={{
+          flex: 1,
+          backgroundColor: "#fff"
+        }}
       >
-        {data.map(item => {
-          if (!item.children) {
-            return (
-              <Menu.Item key={item.code}>
-                <Link to={`/${item.link}`}>
-                  <Icon component={IconMap[item.link]} />
-                  {/* <Icon type={"user"} /> */}
-                  {/* <img src={ReportSvg} style={{ marginRight: 10 }} /> */}
-                  <span>{item.name}</span>
-                </Link>
-              </Menu.Item>
-            );
-          } else {
-            return (
-              <SubMenu
-                key={item.code}
-                title={
-                  <div>
-                    <Icon
-                      component={IconMap[item.link]}
-                      width={"2em"}
-                      height={"2em"}
-                    />
+        <Menu
+          mode="inline"
+          openKeys={openKeys}
+          selectedKeys={selectedKeys}
+          onOpenChange={this.fnOpenChange}
+          subMenuOpenDelay={0}
+          subMenuCloseDelay={0.1}
+          style={{
+            // height: "100%", borderRight: 0
+            flex: 1
+          }}
+        >
+          {data.map(item => {
+            if (!item.children) {
+              return (
+                <Menu.Item key={item.code}>
+                  <Link to={`/${item.link}`}>
+                    {/* <Icon component={IconMap[item.link]} /> */}
+                    <Icon type={"user"} />
+                    {/* <img src={ReportSvg} style={{ marginRight: 10 }} /> */}
                     <span>{item.name}</span>
-                  </div>
-                }
-              >
-                {item.children.map(child => {
-                  return (
-                    <Menu.Item key={child.code}>
-                      <Link to={`/${item.link}/${child.link}`}>
-                        {child.name}
-                      </Link>
-                    </Menu.Item>
-                  );
-                })}
-              </SubMenu>
-            );
-          }
-        })}
-      </Menu>
+                  </Link>
+                </Menu.Item>
+              );
+            } else {
+              return (
+                <SubMenu
+                  key={item.code}
+                  title={
+                    <div>
+                      {/* <Icon
+                        component={IconMap[item.link]}
+                        width={"2em"}
+                        height={"2em"}
+                      /> */}
+                      <Icon type={"user"} />
+                      <span>{item.name}</span>
+                    </div>
+                  }
+                >
+                  {item.children.map(child => {
+                    return (
+                      <Menu.Item key={child.code}>
+                        <Link to={`/${item.link}/${child.link}`}>
+                          {child.name}
+                        </Link>
+                      </Menu.Item>
+                    );
+                  })}
+                </SubMenu>
+              );
+            }
+          })}
+        </Menu>
+      </div>
     );
   }
 }

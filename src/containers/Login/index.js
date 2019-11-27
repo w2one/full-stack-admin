@@ -43,26 +43,26 @@ function Login(props) {
   return (
     <div className="login">
       <Form onSubmit={fnLogin} className="login-form">
-        <div className="title">Admin</div>
+        <div className="title">后台管理</div>
         <Form.Item>
           {getFieldDecorator("username", {
-            rules: [{ required: true, message: "please input usename!" }],
+            rules: [{ required: true, message: "请输入用户名!" }],
             initialValue: Application.get("username") || ""
           })(
             <Input
               prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
-              placeholder="username"
+              placeholder="用户名"
             />
           )}
         </Form.Item>
         <Form.Item>
           {getFieldDecorator("password", {
-            rules: [{ required: true, message: "please input password!" }]
+            rules: [{ required: true, message: "请输入密码!" }]
           })(
             <Input
               prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
               type="password"
-              placeholder="password"
+              placeholder="密码"
             />
           )}
         </Form.Item>
@@ -72,7 +72,7 @@ function Login(props) {
             htmlType="submit"
             className="login-form-button"
           >
-            Login in
+            登录
           </Button>
         </Form.Item>
       </Form>

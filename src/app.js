@@ -94,17 +94,19 @@ class Index extends React.Component {
 
   render() {
     return (
-      <ErrorBoundary>
-        <Provider store={store}>
-          <ConfigProvider locale={zh_CN}>
-            <DictContext.Provider value={{ ...this.state.dict }}>
-              {/* <UserContext.Provider value={{ name: "jay" }}> */}
-              <AppContainer />
-              {/* </UserContext.Provider> */}
-            </DictContext.Provider>
-          </ConfigProvider>
-        </Provider>
-      </ErrorBoundary>
+      <React.StrictMode>
+        <ErrorBoundary>
+          <Provider store={store}>
+            <ConfigProvider locale={zh_CN}>
+              <DictContext.Provider value={{ ...this.state.dict }}>
+                {/* <UserContext.Provider value={{ name: "jay" }}> */}
+                <AppContainer />
+                {/* </UserContext.Provider> */}
+              </DictContext.Provider>
+            </ConfigProvider>
+          </Provider>
+        </ErrorBoundary>
+      </React.StrictMode>
     );
   }
 }

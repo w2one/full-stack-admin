@@ -23,15 +23,13 @@ const Home = ConnectRoute(
   lazy(() => import(/* webpackChunkName: "Home" */ "../Home"))
 );
 const System = lazy(() => import(/* webpackChunkName: "system" */ "../System"));
-const Report = ConnectRoute(
-  lazy(() => import(/* webpackChunkName: "Report" */ "../Report"))
+const ContentContainer = ConnectRoute(
+  lazy(() => import(/* webpackChunkName: "content" */ "../Content"))
 );
-const Banner = ConnectRoute(
-  lazy(() => import(/* webpackChunkName: "Banner" */ "../Banner"))
+const Monitor = ConnectRoute(
+  lazy(() => import(/* webpackChunkName: "monitor" */ "../Monitor"))
 );
-const Show = ConnectRoute(
-  lazy(() => import(/* webpackChunkName: "show" */ "../Show"))
-);
+
 const GeoMap = ConnectRoute(
   lazy(() => import(/* webpackChunkName: "GeoMap" */ "../GeoMap"))
 );
@@ -105,10 +103,9 @@ class Main extends React.Component {
               <Switch>
                 <Route path={`/home`} component={Home} />
                 <Route path={`/system`} component={System} />
-                <Route path={`/report`} component={Report} />
-                <Route path={`/banner`} component={Banner} />
+                <Route path={`/content`} component={ContentContainer} />
+                <Route path={`/monitor`} component={Monitor} />
                 <Route path={`/wechat`} component={Wechat} />
-                <Route path={`/show`} component={Show} />
                 <Route path={`/geomap`} component={GeoMap} />
                 <Redirect to={`/home`} />
               </Switch>

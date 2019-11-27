@@ -7,8 +7,6 @@ export async function query() {
     method: "post"
   });
 
-  console.log("data", data);
-
   // 数据转换
   data.data.map(
     item =>

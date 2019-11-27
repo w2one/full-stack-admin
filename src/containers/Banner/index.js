@@ -1,11 +1,13 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/display-name */
+/* eslint-disable no-unused-vars */
 /**
- * Role
+ * @author Jay
+ * @since 2019-11-26
+ * @description banner
  */
 
 import React, { useState, useEffect } from "react";
-import { Button, Card } from "antd";
+import { Button, Card, Icon } from "antd";
 import Table from "Components/Table";
 import Search from "./Search";
 import Edit from "./Edit";
@@ -16,6 +18,7 @@ function Banner() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
   const [vo, setVo] = useState(null);
+  const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -33,52 +36,73 @@ function Banner() {
    */
   const columns = [
     {
-      title: "id",
+      title: "Id",
       dataIndex: "_id"
     },
     {
-      title: "Description",
+      title: "描述",
       dataIndex: "description"
     },
     {
-      title: "image",
+      title: "图片",
       dataIndex: "image"
     },
     {
       title: "操作",
       render: (text, record) => (
         <span className="table-actions">
-          <span onClick={() => fnEdit(record)}>修改</span>
-          <span>删除</span>
+          <Icon type="eye" title="查看" onClick={() => fnView(record)} />
+          <Icon
+            type="edit"
+            title="编辑"
+            onClick={() => fnEdit(record)}
+            style={{ margin: "0 20px" }}
+          />
+          <Icon
+            type="delete"
+            title="删除"
+            onClick={() => fnDeleteShow(record._id)}
+          />
         </span>
       )
     }
   ];
 
   /**
-   * 编辑
-   * @param {编辑对象} vo
+   * view
+   * @param {*} vo
+   */
+  function fnView(vo) {
+    setVo(vo);
+    setDisabled(true);
+  }
+
+  /**
+   * edit
+   * @param {*} vo
    */
   function fnEdit(vo) {
     console.log(vo);
     setVo(vo);
+    setDisabled(false);
   }
 
   /**
-   * 保存
+   * save
    * @param {*} vo
    */
   async function fnSave(vo) {
     console.log(vo);
     await save(vo);
     setVo(null);
+    setDisabled(false);
     fetchData();
   }
-  console.log("banner render");
+
   return (
     <div>
       {/* 搜索 */}
-      {/* <Search /> */}
+      <Search />
       {/* 数据 */}
       <Card
         style={{ marginTop: 10 }}
@@ -86,6 +110,7 @@ function Banner() {
           <Button
             onClick={() => {
               setVo({});
+              setDisabled(false);
             }}
           >
             新增
@@ -103,6 +128,7 @@ function Banner() {
             setVo(null);
           }}
           vo={vo}
+          disabled={disabled}
           fnSave={fnSave}
         />
       )}

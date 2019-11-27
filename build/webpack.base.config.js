@@ -84,7 +84,7 @@ module.exports = {
       filename: "index.html",
       template: "./src/index.html",
       favicon: "./src/static/images/favicon.ico",
-      title: "Admin",
+      title: "后台管理",
       inject: true,
       minify: ENV === "production" && {
         removeComments: true,

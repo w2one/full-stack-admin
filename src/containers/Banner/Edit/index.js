@@ -1,5 +1,7 @@
 /**
- * 编辑
+ * @author Jay
+ * @since 2019-11-26
+ * @description edit
  */
 
 import React from "react";
@@ -10,7 +12,8 @@ import { Upload } from "Components";
 function Edit(props) {
   const {
     form: { getFieldDecorator },
-    vo: { _id: id, description, images, link }
+    vo: { _id: id, description, images, link },
+    disabled
   } = props;
 
   const formItemLayout = {
@@ -39,6 +42,7 @@ function Edit(props) {
     });
   }
 
+  console.log("disabled", disabled);
   return (
     <Modal
       visible={true}
@@ -52,17 +56,17 @@ function Edit(props) {
       <Form {...formItemLayout}>
         <Form.Item label="外链">
           {getFieldDecorator("link", { initialValue: link })(
-            <Input placeholder="外链" />
+            <Input placeholder="外链" disabled={disabled} />
           )}
         </Form.Item>
         <Form.Item label="描述">
           {getFieldDecorator("description", { initialValue: description })(
-            <Input placeholder="描述" />
+            <Input placeholder="描述" disabled={disabled} />
           )}
         </Form.Item>
         <Form.Item label="图片">
           {getFieldDecorator("images", { initialValue: images })(
-            <Upload number={1} />
+            <Upload number={1} disabled={disabled} />
           )}
         </Form.Item>
       </Form>
@@ -70,4 +74,4 @@ function Edit(props) {
   );
 }
 
-export default Form.create({ name: "form" })(Edit);
+export default Form.create()(Edit);

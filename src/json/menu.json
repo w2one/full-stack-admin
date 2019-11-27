@@ -3,56 +3,106 @@
   "msg": "ok",
   "data": [
     {
-      "name": "Home",
+      "name": "首页",
       "code": "d0c56ca7816f4083a3aa",
       "link": "home"
     },
+
     {
-      "name": "Show",
-      "code": "d0c56ca7816f4083a3a01",
-      "link": "show"
+      "name": "打卡管理",
+      "code": "d0c56ca7816f4083a3a121",
+      "link": "geomap"
     },
     {
-      "name": "Banner",
-      "code": "d0c56ca7816f4083a3a21",
-      "link": "banner"
-    },
-    {
-      "name": "Report",
-      "code": "d0c56ca7816f4083a3a1",
-      "link": "report"
-    },
-    {
-      "name": "wechat",
+      "name": "微信管理",
       "code": "42c4a4d2042545e04e27",
       "link": "wechat",
       "children": [
         {
-          "name": "Menu",
+          "name": "菜单管理",
           "code": "48f04026bb7815699be9",
           "link": "menu"
         },
         {
-          "name": "User",
+          "name": "用户管理",
           "code": "48f04026bb4815699be9",
           "link": "user"
         }
       ]
     },
     {
-      "name": "System",
-      "code": "42c4a4d2042545e0ae27",
+      "name": "内容管理",
+      "code": "content",
+      "link": "content",
+      "children": [
+        {
+          "name": "Show",
+          "code": "d0c56ca7816f4083a3a01",
+          "link": "show"
+        },
+        {
+          "name": "Banner管理",
+          "code": "banner",
+          "link": "banner"
+        },
+        {
+          "name": "公告管理",
+          "code": "notice",
+          "link": "notice"
+        }
+      ]
+    },
+    {
+      "name": "监控中心",
+      "code": "monitor",
+      "link": "monitor",
+      "children": [
+        {
+          "name": "访问日志",
+          "code": "access",
+          "link": "access"
+        },
+        {
+          "name": "登录日志",
+          "code": "login",
+          "link": "login"
+        },
+        {
+          "name": "操作日志",
+          "code": "operation",
+          "link": "operation"
+        }
+      ]
+    },
+    {
+      "name": "系统管理",
+      "code": "system",
       "link": "system",
       "children": [
         {
-          "name": "Dict",
-          "code": "48f04026bb7845699be9",
-          "link": "dict"
+          "name": "用户管理",
+          "code": "user",
+          "link": "user"
         },
         {
-          "name": "User",
-          "code": "d326df189dc94cacb15b",
-          "link": "user"
+          "name": "角色管理",
+          "code": "role",
+          "link": "role"
+        },
+        {
+          "name": "资源管理",
+          "code": "resource",
+          "link": "resource"
+        },
+        {
+          "name": "菜单管理",
+          "code": "menu",
+          "link": "menu"
+        },
+        {
+          "name": "字典管理",
+          "code": "dict",
+          "link": "dict"
         }
       ]
     }
